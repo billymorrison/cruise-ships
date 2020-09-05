@@ -3,7 +3,7 @@ const Port = require('../src/port');
 
 describe('constructor', () => {
     it('creates an object', () => {
-        expect(new Ship('Hull')).toBeInstanceOf(Object);
+        expect(new Ship()).toBeInstanceOf(Object);
     });
 })
 
@@ -12,8 +12,6 @@ describe('initial properties', () => {
         const start = new Port('Hull')
         let testShip = new Ship(start);
         
-        expect(testShip.startingPort).toBeInstanceOf(Object);
-        expect(testShip.startingPort.name).toBe('Hull')
         expect(testShip.currentPort).toBeInstanceOf(Object);
         expect(testShip.currentPort.name).toBe('Hull')
     });
@@ -25,5 +23,15 @@ describe('set sail', () => {
         testShip.setSail();
 
         expect(testShip.currentPort).toBeNull;
+    });
+})
+
+describe('dock', () => {
+    it('can dock at a new port', () => {
+        let testShip = new Ship('Hull');
+        let newPort = new Port('Dover');
+        testShip.dock(newPort);
+
+        expect(testShip.currentPort.name).toBe('Dover');
     });
 })
