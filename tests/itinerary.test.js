@@ -1,21 +1,16 @@
 const Itinerary = require('../src/itinerary');
 const Port = require('../src/port');
+const hull = new Port('Hull');
+const dover = new Port('Dover');
+const testItinerary = new Itinerary([hull, dover]);
 
 describe('constructor', () => {
-    const hull = new Port('Hull');
-    const dover = new Port('Dover');
-    const testItinerary = new Itinerary([hull, dover]);
-
     it('creates an object', () => {
         expect(testItinerary).toBeInstanceOf(Object);
     });
 })
 
 describe('ports', () => {
-    const hull = new Port('Hull');
-    const dover = new Port('Dover');
-    const testItinerary = new Itinerary([hull, dover]);
-
     it('has a ports property', () => {
         expect(testItinerary.ports).toBeInstanceOf(Array);
     });

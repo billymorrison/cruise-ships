@@ -1,19 +1,19 @@
 const Port = require('../src/port');
+const testPort = new Port('Hull');
 
 describe('constructor', () => {
     it('creates an object', () => {
-        expect(new Port('Hull')).toBeInstanceOf(Object);
+        expect(testPort).toBeInstanceOf(Object);
     });
     it('has a name initialised', () => {
-        expect(new Port('Hull').name).toBe('Hull');
+        expect(testPort.name).toBe('Hull');
     });
     it('has a ships property', () => {
-        expect(new Port('Hull').ships).toBeInstanceOf(Array);
+        expect(testPort.ships).toBeInstanceOf(Array);
     });
 });
 
 describe('add and remove functions', () => {
-    const testPort = new Port('Hull')
     it('can add a new ship', () => {
         testPort.addShip({itinerary: 'bla'})
 
