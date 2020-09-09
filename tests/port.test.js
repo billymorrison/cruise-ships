@@ -1,5 +1,6 @@
 const Port = require('../src/port');
 const testPort = new Port('Hull');
+const testShip = jest.fn();
 
 describe('constructor', () => {
     it('creates an object', () => {
@@ -15,13 +16,13 @@ describe('constructor', () => {
 
 describe('add and remove functions', () => {
     it('can add a new ship', () => {
-        testPort.addShip({itinerary: 'bla'})
+        testPort.addShip(testShip)
 
-        expect(testPort.ships).toHaveLength(1);
+        expect(testPort.ships).toContain(testShip);
     });
     it('can remove a new ship', () => {
-        testPort.removeShip({itinerary: 'bla'})
+        testPort.removeShip(testShip)
 
-        expect(testPort.ships).toHaveLength(0);
+        expect(testPort.ships).not.toContain(testShip);
     });
 })

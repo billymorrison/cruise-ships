@@ -1,7 +1,6 @@
 const Itinerary = require('../src/itinerary');
-const Port = require('../src/port');
-const hull = new Port('Hull');
-const dover = new Port('Dover');
+const hull = jest.fn();
+const dover = jest.fn();
 const testItinerary = new Itinerary([hull, dover]);
 
 describe('constructor', () => {
@@ -17,6 +16,6 @@ describe('ports', () => {
 
     it('gets ports from arguments', () => {
         expect(testItinerary.ports).toHaveLength(2);
-        expect(testItinerary.ports[0].name).toEqual('Hull');
+        expect(testItinerary.ports).toContain(hull, dover);
     });
 })
