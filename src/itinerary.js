@@ -1,7 +1,14 @@
-class Itinerary {
-    constructor(array) {
-        this.ports = array;
+(function exportItinerary() {
+    class Itinerary {
+        constructor(array) {
+            this.ports = array;
+        }
     }
-}
 
-module.exports = Itinerary;
+    if(module !== 'undefined' && module.exports) {
+        module.exports = Itinerary;
+    } else {
+        window.Itinerary = Itinerary;
+    }
+
+}());

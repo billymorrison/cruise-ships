@@ -1,0 +1,19 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#viewport {
+    width: 640px;
+    height: 256px;
+    background-image: url(../images/water0.png);
+    position: relative;
+    overflow-x: auto;
+}

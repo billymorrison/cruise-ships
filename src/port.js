@@ -1,16 +1,25 @@
-class Port {
-    constructor(name) {
-        this.name = name;
-        this.ships = [];
+(function exportPort() {
+    class Port {
+        constructor(name) {
+            this.name = name;
+            this.ships = [];
+        }
+
+        addShip(shipObject) {
+            this.ships.push(shipObject)
+        }
+
+        removeShip(shipObject) {
+            this.ships.splice(this.ships.indexOf(shipObject), 1);
+        }
     }
 
-    addShip(shipObject) {
-        this.ships.push(shipObject)
+    if(typeof module !== 'undefined' && module.exports) {
+        module.exports = Port;
+    } else {
+        window.Port = Port;
     }
 
-    removeShip(shipObject) {
-        this.ships.splice(this.ships.indexOf(shipObject), 1);
-    }
-}
+}());
 
-module.exports = Port;
+
