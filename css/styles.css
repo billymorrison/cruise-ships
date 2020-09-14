@@ -13,7 +13,7 @@ body {
 #viewport {
     width: 640px;
     height: 256px;
-    background-image: url(../images/water0.png);
+    background-image: url('../images/water0.png');
     position: relative;
     overflow-x: auto;
 }
@@ -29,4 +29,11 @@ body {
     width: 64px;
     height: 32px;
     background-image: url('../images/port.png');
+}
+
+#ship {
+    width: 128px;
+    height: 64px;
+    background-image: url("../images/ship.png");
+    position: absolute;
 }
