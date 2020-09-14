@@ -27,7 +27,7 @@
         }
     }
 
-    if(module !== 'undefined' && module.exports) {
+    if(typeof module !== 'undefined' && module.exports) {
         module.exports = Ship;
     } else {
         window.Ship = Ship;
